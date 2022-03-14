@@ -30,19 +30,74 @@ public class spotifyplaylist {
 		}
 		String[] fileContent2 = fileContent.split("\n");
 		System.out.println(Arrays.toString(fileContent2));
-
+		int numberoftracks = 0;
 		int i;
+		int totalduration = 0;
+		int k;
+		String[][] filecontent3 = new String[85][4];
+		for(i=0; i<fileContent2.length; i++) {
+			for (k=0; k<=4; k++) {
+				filecontent3[i] = fileContent2[i].split(",");
+
+			}
+		}
+		
+
 		for(i=0; i<fileContent2.length; i++) {
 			System.out.println(fileContent2[i].charAt(0));
 			if(fileContent2[i].charAt(0) == '1') {
 				Acoustic.add(fileContent2[i]);
-				System.out.println("yes");
+				numberoftracks++;
+
 				
 			}
-	
+			else if (fileContent2[i].charAt(0) == '2') {
+				Instrumental.add(fileContent2[i]);
+				numberoftracks++;
+
+
+			}
+			else if (fileContent2[i].charAt(0) == '3') {
+				Rock.add(fileContent2[i]);
+				numberoftracks++;
+
+			}
+			else if (fileContent2[i].charAt(0) == '4') {
+				Rap.add(fileContent2[i]);
+				numberoftracks++;
+
+			}
+			else if (fileContent2[i].charAt(0) == '5') {
+				Jazz.add(fileContent2[i]);
+				numberoftracks++;
+
+			}
+			else {
+				Pop.add(fileContent2[i]);
+				numberoftracks++;
+
+			}
 
 		}
-		System.out.println(Acoustic);
+		for(i=0; i<85; i++) {
+			 
+			totalduration += (Integer.parseInt(filecontent3[i][2]));
+			
+
+		
+	}
+		//workingonesmarkedascomment
+		//System.out.println(filecontent3);
+		//System.out.println(Acoustic);
+		//System.out.println(Instrumental);
+		//System.out.println(Rock);
+		//System.out.println(Rap);
+		//System.out.println(Jazz);
+		//System.out.println(Pop);
+		System.out.println(numberoftracks);
+		System.out.println(totalduration/60 + " minutes"  + " " + totalduration%60 + " seconds");
+	
+		//add remove in bag adt sort by popularity and genres
 		
 	}
 
