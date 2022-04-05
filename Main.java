@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		ArrayStack<TunaCan> TunaCanPile = new ArrayStack<TunaCan>();
 		ArrayStack<CornCan> CornCanPile = new ArrayStack<CornCan>();
@@ -22,37 +22,104 @@ public class Main {
 			InstantNoodlePacketPile.push(InstantNoodleitem);
 			//show stack items
 		}
+		System.out.println("before processing the orders\ntunaCanPile");
+		for (int i = 0; i <= 29; i++) {
+			System.out.println(TunaCanPile.returnTunaCanItems()[i].drainedWeigth + " "
+					+ TunaCanPile.returnTunaCanItems()[i].netWeight + " " +
+					TunaCanPile.returnTunaCanItems()[i].Ingredients + " " +
+					TunaCanPile.returnTunaCanItems()[i].expirationDate);
+		}
+		System.out.println("CornCanPile");
+		for (int i = 0; i <= 29; i++) {
+			System.out.println(CornCanPile.returnCornCanItems()[i].drainedWeight + " "
+					+ CornCanPile.returnCornCanItems()[i].netWeight + " " +
+					CornCanPile.returnCornCanItems()[i].productionCountry + " " +
+					CornCanPile.returnCornCanItems()[i].expirationDate);
+		}
+		System.out.println("PuddingPacketPile");
+		for (int i = 0; i <= 29; i++) {
+			System.out.println(PudingPacketPile.returnPuddingPacketItems()[i].flavor + " "
+					+ PudingPacketPile.returnPuddingPacketItems()[i].netWeight + " " +
+					PudingPacketPile.returnPuddingPacketItems()[i].expirationDate);
+		}
+		System.out.println("InstantNoodlePile");
+		for (int i = 0; i <= 29; i++) {
+			System.out.println(InstantNoodlePacketPile.returnInstantNoodleItems()[i].simmerDuration + " "
+					+ InstantNoodlePacketPile.returnInstantNoodleItems()[i].netWeight + " " +
+					InstantNoodlePacketPile.returnInstantNoodleItems()[i].expirationDate);
+		}
 		//parse csv lines
 		String file = "src//orders.csv";
 		BufferedReader reader = null;
 		String line = "";
 		
-		try {
-			reader = new BufferedReader(new FileReader(file));
-			while((line = reader.readLine()) != null) {
-				String[] row = line.split(",");
-				Order OrderObject = new Order();
-				OrderObject.OrderID = Integer.parseInt(row[0]);
-				OrderObject.OrderDate = row[1];
-				OrderObject.foodCategory[0] = row[2];
-				OrderObject.foodCategory[1] = row[3];
-				OrderObject.foodCategory[2] = row[4];
-				//split csv lines create order objects
+		Queue orderQueue = new Queue();
+		reader = new BufferedReader(new FileReader(file));
+		while((line = reader.readLine()) != null) {
+			String[] row = line.split(",");
+			Order OrderObject = new Order();
+			OrderObject.OrderID = Integer.parseInt(row[0]);
+			OrderObject.OrderDate = row[1];	
+			OrderObject.foodCategory[0] = row[2];
+			OrderObject.foodCategory[1] = row[3];
+			OrderObject.foodCategory[2] = row[4];
+			//split csv lines create order objects
+			orderQueue.enqueue(OrderObject);
+			//System.out.println(OrderObject);
 
 				
 				
 			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			reader.close();
+			System.out.println("queue before processing orders");
+			orderQueue.printObjects();
+			//System.out.println(orderQueue.printObjects(30).OrderID);
+			ArrayList cargoPacketList = new ArrayList();
+			for (int i = 0; i<=29; i++) {
+				int index = 0;
+				Object[] object = new Object[3];
+				Order orderobject = orderQueue.dequeue();
+				if (orderobject.foodCategory[0] == "tuna" ||
+				orderobject.foodCategory[1] == "tuna" ||
+				orderobject.foodCategory[2] == "tuna" ) {
+					object[index] = TunaCanPile.pop();
+					index++;
+				}
+				if (orderobject.foodCategory[0] == "corn" ||
+					orderobject.foodCategory[1] == "corn" ||
+					orderobject.foodCategory[2] == "corn" ) {
+					object[index] = CornCanPile.pop();
+					index++;
+						}
+				if (orderobject.foodCategory[0] == "pudding" ||
+					orderobject.foodCategory[1] == "pudding" ||
+					orderobject.foodCategory[2] == "pudding" ) {
+					object[index] = PudingPacketPile.pop();
+					index++;
+								}
+				if (orderobject.foodCategory[0] == "noodle" ||
+					orderobject.foodCategory[1] == "noodle" ||
+					orderobject.foodCategory[2] == "noodle" ) {
+					object[index] = InstantNoodlePacketPile.pop();
+					index++;
+					}
+				index -= 2;
+				
+				CargoPackage cargopackage = new CargoPackage(orderobject.OrderID, orderobject.OrderDate, object);
+				//System.out.println(cargopackage.orderID);
+				cargoPacketList.insert(cargopackage.orderID, cargopackage);
 			}
-		}
+			System.out.println("displaying list of cargo items");
+			cargoPacketList.displayCargoItems();
+			
+			
+			
+		
+		
+		
+		
+	
+		
 	}
 
 }

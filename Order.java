@@ -1,7 +1,7 @@
 
 public class Order {
-	public static int OrderID;
-	public static String OrderDate;
-	public static String[] foodCategory = new String[3];
+	public  int OrderID;
+	public  String OrderDate;
+	public  String[] foodCategory = new String[3];
 }
 

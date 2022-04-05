@@ -24,10 +24,12 @@ public class ArrayStack<T> {
 		TopIndex++;
 		
 	}
-	public void pop() {
+	public T pop() {
 		//checkinitaliztion
+		T result = Stack[TopIndex];
 		Stack[TopIndex] = null;
 		TopIndex--;
+		return result;
 	}
 	private void ensureCapacity() {
 		if (TopIndex > Stack.length - 1) {
@@ -38,5 +40,36 @@ public class ArrayStack<T> {
 	}
 	public T returnStackItems(int number) {
 		return Stack[number];
+	}
+	public void numberOfItems() {
+		System.out.println(TopIndex);
+	}
+	public TunaCan[] returnTunaCanItems() {
+		TunaCan[] result = new TunaCan[TopIndex];
+		for (int i = 0; i <= 29; i++) {
+			result[i] = (TunaCan) Stack[i];
+		}
+		return result;
+	}
+	public CornCan[] returnCornCanItems() {
+		CornCan[] result = new CornCan[TopIndex];
+		for (int i = 0; i <= 29; i++) {
+			result[i] = (CornCan) Stack[i];
+		}
+		return result;
+	}
+	public InstantNoodlePacket[] returnInstantNoodleItems() {
+		InstantNoodlePacket[] result = new InstantNoodlePacket[TopIndex];
+		for (int i = 0; i <= 29; i++) {
+			result[i] = (InstantNoodlePacket) Stack[i];
+		}
+		return result;
+	}
+	public PuddingPacket[] returnPuddingPacketItems() {
+		PuddingPacket[] result = new PuddingPacket[TopIndex];
+		for (int i = 0; i <= 29; i++) {
+			result[i] = (PuddingPacket) Stack[i];
+		}
+		return result;
 	}
 }
