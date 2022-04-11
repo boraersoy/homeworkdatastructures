@@ -7,7 +7,7 @@ public class ArrayList {
 	public void insert(int newPosition, CargoPackage newEntry) {
 		//if((newPosition >= 1) && (newPosition <= numberOfEntries + 1)) {
 			cargo[newPosition] = newEntry;
-			//numberOfEntries++;
+			numberOfEntries++;
 			//ensureCapacity();		
 			//}
 	//else {
@@ -18,7 +18,12 @@ public class ArrayList {
 	public void remove(int index) { //order type 
 		if ((index >= 1) && (index <= numberOfEntries)) {
 			assert !isEmpty();
-			//Order result = cargo[index]; sonra bakim
+			//CargoPackage result = cargo[index]; //sonra bakim
+			cargo[index] = null;
+			for (int i = 1; i <= numberOfEntries ; i++) {
+				cargo[index] = cargo[index + 1];
+				index++;
+			}
 			numberOfEntries--;
 			//return order
 		}
@@ -33,5 +38,12 @@ public class ArrayList {
 					+ " " + cargo[i].objectArray[2]);
 		}
 	}
+	public void displayCargoItem(int index) {
+		System.out.println(cargo[index].orderID + " " +  cargo[index].orderDate
+				+ " " + cargo[index].objectArray[0] + " " + cargo[index].objectArray[1]
+				+ " " + cargo[index].objectArray[2]);
+	}
+	
+	
 	
 }

@@ -41,35 +41,39 @@ public class ArrayStack<T> {
 	public T returnStackItems(int number) {
 		return Stack[number];
 	}
-	public void numberOfItems() {
-		System.out.println(TopIndex);
+	public int numberOfItems() {
+		return TopIndex;
 	}
 	public TunaCan[] returnTunaCanItems() {
 		TunaCan[] result = new TunaCan[TopIndex];
-		for (int i = 0; i <= 29; i++) {
+		for (int i = 0; i <= TopIndex -1; i++) {
 			result[i] = (TunaCan) Stack[i];
 		}
 		return result;
 	}
 	public CornCan[] returnCornCanItems() {
 		CornCan[] result = new CornCan[TopIndex];
-		for (int i = 0; i <= 29; i++) {
+		for (int i = 0; i <= TopIndex-1; i++) {
 			result[i] = (CornCan) Stack[i];
 		}
 		return result;
 	}
 	public InstantNoodlePacket[] returnInstantNoodleItems() {
 		InstantNoodlePacket[] result = new InstantNoodlePacket[TopIndex];
-		for (int i = 0; i <= 29; i++) {
+		for (int i = 0; i <= TopIndex - 1; i++) {
 			result[i] = (InstantNoodlePacket) Stack[i];
 		}
 		return result;
 	}
 	public PuddingPacket[] returnPuddingPacketItems() {
 		PuddingPacket[] result = new PuddingPacket[TopIndex];
-		for (int i = 0; i <= 29; i++) {
+		for (int i = 0; i <= TopIndex - 1; i++) {
 			result[i] = (PuddingPacket) Stack[i];
 		}
 		return result;
+	}
+	public void isEmpty() {
+		System.out.println(TopIndex);
+
 	}
 }

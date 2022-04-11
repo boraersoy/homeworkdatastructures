@@ -6,6 +6,7 @@ public class TunaCan {
 	public final int drainedWeigth = 50;
 	public final String Ingredients = "tuna,sunflower oil,salt";
 	public  String expirationDate = null;
+	public final String name = "tuna";
 	
 	public TunaCan(int Months)	{
 		LocalDate date = LocalDate.of(2022, 6, 1);
