@@ -28,8 +28,8 @@ public class Queue {
 	}
 	public void printObjects() {
 	for (int i = 1; i <= 30; i++) {
-		System.out.println(QueueArray[i].OrderID + " " + 
-				QueueArray[i].OrderDate + " " +
+		System.out.println("Order ID:" + QueueArray[i].OrderID + " Order Date:" + 
+				QueueArray[i].OrderDate + " Order items: " +
 				QueueArray[i].foodCategory[0] + " " +
 				QueueArray[i].foodCategory[1] + " " +
 				QueueArray[i].foodCategory[2]);

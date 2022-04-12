@@ -9,7 +9,7 @@ public class TunaCan {
 	public final String name = "tuna";
 	
 	public TunaCan(int Months)	{
-		LocalDate date = LocalDate.of(2022, 6, 1);
+		LocalDate date = LocalDate.of(2024, 12, 01);
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}

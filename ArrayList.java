@@ -40,7 +40,7 @@ public class ArrayList {
 				TunaCan tunacan = (TunaCan) cargo[i].objectArray[0];
 				CornCan corncan = (CornCan) cargo[i].objectArray[1];
 				PuddingPacket puddingcan = (PuddingPacket) cargo[i].objectArray[2];
-				System.out.println(cargo[i].orderID + " " +  cargo[i].orderDate + " " + tunacan.getTunaName()
+				System.out.println("Order ID:" + cargo[i].orderID + " Order Date:" +  cargo[i].orderDate + " Order types:" + tunacan.getTunaName()
 				+ " " + corncan.CorngetName() + " " + puddingcan.getPuddingName());
 
 			}
@@ -50,7 +50,7 @@ public class ArrayList {
 				CornCan corncan = (CornCan) cargo[i].objectArray[0];
 				PuddingPacket puddingpacket = (PuddingPacket) cargo[i].objectArray[1];
 				InstantNoodlePacket noodle = (InstantNoodlePacket) cargo[i].objectArray[2];
-				System.out.println(cargo[i].orderID + " " +  cargo[i].orderDate + " " + corncan.CorngetName()
+				System.out.println("Order ID:" + cargo[i].orderID + " Order Date:" +  cargo[i].orderDate + " Order Types:" + corncan.CorngetName()
 				+ " " + puddingpacket.getPuddingName() + " " + noodle.getNoodleName());
 
 			}
@@ -60,7 +60,7 @@ public class ArrayList {
 				TunaCan tunacan = (TunaCan) cargo[i].objectArray[0];
 				CornCan corncan = (CornCan) cargo[i].objectArray[1];
 				InstantNoodlePacket noodlecan = (InstantNoodlePacket) cargo[i].objectArray[2];
-				System.out.println(cargo[i].orderID + " " +  cargo[i].orderDate + " " + tunacan.getTunaName()
+				System.out.println("Order ID:" + cargo[i].orderID + " Order Date:" +  cargo[i].orderDate + " Order Types:" + tunacan.getTunaName()
 				+ " " + corncan.CorngetName() + " " + noodlecan.getNoodleName());
 
 			}

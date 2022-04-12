@@ -13,41 +13,41 @@ public class Main {
 
 		for (int i = 0; i<=30; i++) {
 			
-			TunaCan TunaCanitem = new TunaCan(i);
+			TunaCan TunaCanitem = new TunaCan(-i);
 			TunaCanPile.push(TunaCanitem);
-			CornCan CornCanitem = new CornCan(i);
+			CornCan CornCanitem = new CornCan(-i);
 			CornCanPile.push(CornCanitem);
-			PuddingPacket PudingPacketitem = new PuddingPacket(i);
+			PuddingPacket PudingPacketitem = new PuddingPacket(-i);
 			PudingPacketPile.push(PudingPacketitem);
-			InstantNoodlePacket InstantNoodleitem = new InstantNoodlePacket(i);
+			InstantNoodlePacket InstantNoodleitem = new InstantNoodlePacket(-i);
 			InstantNoodlePacketPile.push(InstantNoodleitem);
 			//show stack items
 		}
-		System.out.println("before processing the orders\ntunaCanPile");
+		System.out.println("before processing the orders\n TUNACANPILE");
 		
 		for (int i = 0; i <= 29; i++) {
-			System.out.println(TunaCanPile.returnTunaCanItems()[i].drainedWeigth + " "
-					+ TunaCanPile.returnTunaCanItems()[i].netWeight + " " +
-					TunaCanPile.returnTunaCanItems()[i].Ingredients + " " +
+			System.out.println("drained weight:" + TunaCanPile.returnTunaCanItems()[i].drainedWeigth + " netweight:"
+					+ TunaCanPile.returnTunaCanItems()[i].netWeight + " Ingredients:" +
+					TunaCanPile.returnTunaCanItems()[i].Ingredients + " expration date:" +
 					TunaCanPile.returnTunaCanItems()[i].expirationDate);
 		}
-		System.out.println("CornCanPile");
+		System.out.println("CORNCANPILE");
 		for (int i = 0; i <= 29; i++) {
-			System.out.println(CornCanPile.returnCornCanItems()[i].drainedWeight + " "
-					+ CornCanPile.returnCornCanItems()[i].netWeight + " " +
-					CornCanPile.returnCornCanItems()[i].productionCountry + " " +
+			System.out.println("drained weight:" + CornCanPile.returnCornCanItems()[i].drainedWeight + " net Weight:"
+					+ CornCanPile.returnCornCanItems()[i].netWeight + " production country:" +
+					CornCanPile.returnCornCanItems()[i].productionCountry + " expiration date:" +
 					CornCanPile.returnCornCanItems()[i].expirationDate);
 		}
-		System.out.println("PuddingPacketPile");
+		System.out.println("PUDDINGPACKETPILE");
 		for (int i = 0; i <= 29; i++) {
-			System.out.println(PudingPacketPile.returnPuddingPacketItems()[i].flavor + " "
-					+ PudingPacketPile.returnPuddingPacketItems()[i].netWeight + " " +
+			System.out.println("flavor:" + PudingPacketPile.returnPuddingPacketItems()[i].flavor + " net weight: "
+					+ PudingPacketPile.returnPuddingPacketItems()[i].netWeight + " expiration date: " +
 					PudingPacketPile.returnPuddingPacketItems()[i].expirationDate);
 		}
-		System.out.println("InstantNoodlePile");
+		System.out.println("INSTANTNOODLEPILE");
 		for (int i = 0; i <= 29; i++) {
-			System.out.println(InstantNoodlePacketPile.returnInstantNoodleItems()[i].simmerDuration + " "
-					+ InstantNoodlePacketPile.returnInstantNoodleItems()[i].netWeight + " " +
+			System.out.println("simmer duration:" + InstantNoodlePacketPile.returnInstantNoodleItems()[i].simmerDuration + " net Weight: "
+					+ InstantNoodlePacketPile.returnInstantNoodleItems()[i].netWeight + " expiration date: " +
 					InstantNoodlePacketPile.returnInstantNoodleItems()[i].expirationDate);
 		}
 		//parse csv lines
@@ -73,7 +73,7 @@ public class Main {
 				
 			}
 			reader.close();
-			System.out.println("queue before processing orders");
+			System.out.println("QUEUE BEFORE PROCESSING ORDERS");
 			orderQueue.printObjects();
 			//System.out.println(orderQueue.printObjects(30).OrderID);
 
@@ -122,7 +122,7 @@ public class Main {
 				cargoPacketList.insert(cargopackage.orderID, cargopackage);
 				
 			}
-			System.out.println("displaying list of cargo items");
+			System.out.println("DISPLAYING LIST OF CARGO ITEMS");
 			cargoPacketList.displayCargoItems();
 			System.out.println("piles after processing the orders");
 			for (int i = 0; i <= TunaCanPile.numberOfItems()-1; i++) {
