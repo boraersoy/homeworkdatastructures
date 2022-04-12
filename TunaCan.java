@@ -13,4 +13,15 @@ public class TunaCan {
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}
+	public String getTunaInfo() {
+		return (netWeight + " " + drainedWeigth + " " + Ingredients + " " + expirationDate);
+			
+	}
+	public String getTunaName() {
+		return name;
+	}
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+	
 }

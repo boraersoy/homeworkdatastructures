@@ -11,4 +11,14 @@ public class InstantNoodlePacket {
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}
+	public String noodlegetInfo() {
+		return (netWeight + " " + simmerDuration + " " +  expirationDate);
+	}
+	public String getNoodleName() {
+		return name;
+	}
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+	
 }

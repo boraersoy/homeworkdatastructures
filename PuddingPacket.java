@@ -11,5 +11,15 @@ public class PuddingPacket {
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}
+	public String getPuddingInfo() {
+		return (netWeight + " " + flavor + " " + expirationDate ); 
+	}
+	
+	public String getPuddingName() {
+		return name;
+	}
+	public String getExpirationDate() {
+		return expirationDate;
+	}
 
 }

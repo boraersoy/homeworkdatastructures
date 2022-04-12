@@ -49,6 +49,7 @@ public class ArrayStack<T> {
 		for (int i = 0; i <= TopIndex -1; i++) {
 			result[i] = (TunaCan) Stack[i];
 		}
+		//reduce redundancy with printing items in this method
 		return result;
 	}
 	public CornCan[] returnCornCanItems() {

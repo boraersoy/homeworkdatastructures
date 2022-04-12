@@ -151,7 +151,11 @@ public class Main {
 						+ InstantNoodlePacketPile.returnInstantNoodleItems()[i].netWeight + " " +
 						InstantNoodlePacketPile.returnInstantNoodleItems()[i].expirationDate);
 			}
-			cargoPacketList.displayCargoItem(14);
+			System.out.println("displaying expiration dates of the packaged products with ID 25");
+			cargoPacketList.displayCargoItem(25);
+			cargoPacketList.remove(20);
+			System.out.println("displaying list's contents after removing item with ID 20");
+			cargoPacketList.displayCargoItems();
 		
 	}
 

@@ -12,5 +12,16 @@ public class CornCan {
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}
+	public String cornGetInfo() {
+		return (netWeight + " " + drainedWeight + " " + productionCountry
+				+ " " + expirationDate);
+	}
 
+	public String CorngetName() {
+		return (name);
+	}
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+	
 }
