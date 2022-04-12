@@ -7,7 +7,7 @@ public class PuddingPacket {
 	public final String name = "pudding";
 	
 	public PuddingPacket(int Months)	{
-		LocalDate date = LocalDate.of(2024, 11, 01);
+		LocalDate date = LocalDate.of(2024, 12, 01);
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}

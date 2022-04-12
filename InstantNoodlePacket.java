@@ -7,7 +7,7 @@ public class InstantNoodlePacket {
 	public final String name = "noodle";
 	
 	public InstantNoodlePacket(int Months)	{
-		LocalDate date = LocalDate.of(2024, 11, 01);
+		LocalDate date = LocalDate.of(2024, 12, 01);
 		expirationDate = date.plusMonths(Months).toString();
 		
 	}
