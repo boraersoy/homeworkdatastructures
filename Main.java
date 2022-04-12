@@ -140,13 +140,13 @@ public class Main {
 			}
 			
 			System.out.println("PuddingPacketPile");
-			for (int i = 1; i <= PudingPacketPile.numberOfItems() - 1; i++) {
+			for (int i = 0; i <= PudingPacketPile.numberOfItems() - 1; i++) {
 				System.out.println(PudingPacketPile.returnPuddingPacketItems()[i].flavor + " "
 						+ PudingPacketPile.returnPuddingPacketItems()[i].netWeight + " " +
 						PudingPacketPile.returnPuddingPacketItems()[i].expirationDate);
 			}
 			System.out.println("InstantNoodlePile");
-			for (int i = 1; i <= InstantNoodlePacketPile.numberOfItems() - 1; i++) {
+			for (int i = 0; i <= InstantNoodlePacketPile.numberOfItems() - 1; i++) {
 				System.out.println(InstantNoodlePacketPile.returnInstantNoodleItems()[i].simmerDuration + " "
 						+ InstantNoodlePacketPile.returnInstantNoodleItems()[i].netWeight + " " +
 						InstantNoodlePacketPile.returnInstantNoodleItems()[i].expirationDate);
